@@ -1,6 +1,9 @@
 <form action="#" method="post">
     <label for="nombre1">Ingresa un nombre: </label>
     <input type="text" name="nombre1" id="nombre1">
+    <br>
+    <br>
+    <input type="submit" value="Enviar">
 </form>
 <?php
 
