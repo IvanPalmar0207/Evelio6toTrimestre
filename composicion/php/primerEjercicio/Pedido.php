@@ -1,46 +1,27 @@
 <?php
 
 require_once('CarroCompra.php');
+require_once('Clientee.php');
 
 class Pedido{
-
-    private string $nombreCliente;
-    private string $correoCliente;
-    private string $direccionCliente;
     private CarroCompra $carro;
+    private Clientee $cliente;
+    private static $contador = 0;
+    public function __construct(Clientee $cliente, CarroCompra $carro){
 
-    public function __construct(string $nombreCliente, string $correoCliente, string $direccionCliente, CarroCompra $carro){
-
-        $this->nombreCliente = $nombreCliente;
-        $this->correoCliente = $correoCliente;
-        $this->direccionCliente = $direccionCliente;
+        $this->cliente = $cliente;
         $this->carro = $carro;
+        Pedido::$contador+=1;
 
     }
 
-    //Nombre del cliente
-    public function getNombreCliente(){
-        return $this->nombreCliente;
-    }
-    public function setNombreCliente($nombreCliente){
-        $this->nombreCliente = $nombreCliente;
-    }
-
-    //Correo del cliente
-    public function getCorreoCliente(){
-        return $this->correoCliente;
-    }    
-    public function setCorroeCliente($correoCliente){
-        $this->correoCliente = $correoCliente;
-    }
-
-    //Direccion del cliente
-    public function getDireccionCliente(){
-        return $this->direccionCliente;
-    }
-
-    public function setDireccionCliente($direccionCliente){
-        $this->direccionCliente = $direccionCliente;
+    //Visualizacion de cliente
+    public function mostrarDatosCliente(){
+        echo 'Los datos del cliente '. $this->cliente->getNombreCliente(). ' son:' ;
+        echo 'El nombre del cliente es: '. $this->cliente->getNombreCliente().'<br>';
+        echo 'El correo del cliente es: '. $this->cliente->getCorreoCliente().'<br>';
+        echo 'La direccion del cliente es: '. $this->cliente->getDireccionCliente().'<br>';
+        echo 'El telefono del cliente es: '. $this->cliente->getTelefonoCliente().'<br>';
     }
 
     //Metodo de totales
@@ -55,6 +36,11 @@ class Pedido{
         }else{
             return 'Procesado correctamente';
         }
+    }
+
+    //Numero de instancias
+    public static function verInstancias(){
+        return Pedido::$contador;
     }
 
 }

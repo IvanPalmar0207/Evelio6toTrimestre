@@ -4,6 +4,7 @@ class Producto{
 
     private string $nombreProducto;
     private float $precio;
+    private $proveedores = [];
 
     public function __construct(string $nombreProducto, float $precio){
 
@@ -26,6 +27,16 @@ class Producto{
     }
     public function setPrecio($precio){
         $this->precio = $precio;
+    }
+    
+    //Agregar proveedores
+    public function agregarProveedores($proveedor){
+        array_push($this->proveedores, $proveedor);
+    }
+
+    //Visualizacion de los proveedores
+    public function verProveedores(){
+        return $this->proveedores;
     }
 
 

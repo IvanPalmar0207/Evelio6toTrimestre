@@ -29,8 +29,7 @@ class Ficha{
     
     //Ver aprendices
     public function verAprendicesFicha(){
-        echo '<h2>'.'<b>'.'APRENDICES Y SU FICHA DENTRO DEL SENA'.'</b>'.'</h2>';
-        echo 'Los aprendices asociados a la ficha '. $this->codigoFicha . ' son: '. '<br>'.'<br>';
+        echo '<br>'.'Los aprendices asociados a la ficha '. $this->codigoFicha . ' son: '. '<br>'.'<br>';
         foreach($this->aprendices as $aprendiz){
             echo '<b>'.'- '.'</b>'.$aprendiz->getIdAprendiz() .', '. $aprendiz->getNombres() .', '. $aprendiz->getApellidos() .', '. $aprendiz->getCorreo(). '<br>';
         }
