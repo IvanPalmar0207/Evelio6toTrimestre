@@ -16,3 +16,23 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/colombia',function(){
+    return view('paises.colombia');
+});
+
+Route::get('/peru',function(){
+    return view('paises.peru');
+});
+
+Route::get('/bolivia',function(){
+    return view('paises.bolivia');
+});
+
+Route::get('/mexico',function(){
+    return view('paises.mexico');
+});
+
+Route::get('/brasil',function(){
+    return view('paises.brasil');
+});
